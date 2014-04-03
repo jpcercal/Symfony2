@@ -19,8 +19,10 @@ O banco de "Estados" e "Cidades" está atualizado de acordo com o último levant
 
 As contas de acesso criadas automaticamente pelo carregamento de Data Fixtures são:
 
-**Usuário:** admin
-**Senha:** 123
+**Usuário:** *admin*
 
-**Usuário:** default
-**Senha:** 123
+**Senha:** *123*
+
+**Usuário:** *default*
+
+**Senha:** *123*
