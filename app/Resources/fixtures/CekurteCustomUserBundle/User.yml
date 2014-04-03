@@ -1,0 +1,19 @@
+Cekurte\Custom\UserBundle\Entity\User:
+    userAdmin:
+        username: admin
+        name: Admin
+        email: sistemas@cekurte.com
+        enabled: true
+        plainPassword: 123
+        city: @city4549
+        groups:
+            - @groupAdmin
+    userDefault:
+        username: default
+        name: Default
+        email: jpcercal@gmail.com
+        enabled: true
+        plainPassword: 123
+        city: @city4549
+        groups:
+            - @groupDefault

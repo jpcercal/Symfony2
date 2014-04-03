@@ -1,0 +1,14 @@
+services:
+    oauth_custom_user_provider:
+        class: Cekurte\UserBundle\Security\Core\User\FOSUBUserProvider
+        arguments: [@fos_user.user_manager,{facebook: facebook_id, linkedin: linkedin_id}, @service_container]
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+    gedmo.listener.sluggable:
+        class: Gedmo\Sluggable\SluggableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ @annotation_reader ] ]

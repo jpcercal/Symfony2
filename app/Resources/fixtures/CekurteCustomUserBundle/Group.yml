@@ -1,0 +1,9 @@
+Cekurte\Custom\UserBundle\Entity\Group:
+    groupAdmin:
+        __construct:
+            - "Admin"
+            - ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN']
+    groupDefault:
+        __construct:
+            - "Default"
+            - ['ROLE_USER']

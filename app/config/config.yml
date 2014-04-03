@@ -1,0 +1,176 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+framework:
+    #esi:             ~
+    translator:      { fallback: "%locale%" }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
+    fragments:       ~
+    http_method_override: true
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'CekurteGeneratorBundle:Form:fields.html.twig'
+    paths:
+        "%kernel.root_dir%/../vendor/cekurte/generatorbundle/Cekurte/GeneratorBundle/Resources/views": CekurteGeneratorBundleVendor
+        "%kernel.root_dir%/../vendor/cekurte/userbundle/Cekurte/UserBundle/Resources/views": CekurteUserBundleVendor
+
+# Assetic Configuration
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        ['CekurteGeneratorBundle']
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        #closure:
+        #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
+        #yui_css:
+        #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   "%database_driver%"
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        # if using pdo_sqlite as your database driver, add the path in parameters.yml
+        # e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        # path:     "%database_path%"
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+# FOSUserBundle Configuration
+fos_user:
+    db_driver:              orm
+    firewall_name:          admin
+    user_class:             Cekurte\Custom\UserBundle\Entity\User
+    group:
+        group_class:        Cekurte\Custom\UserBundle\Entity\Group
+    service:
+        mailer:             fos_user.mailer.twig_swift
+    from_email:
+        address:            jpcercal.tmp@gmail.com
+        sender_name:        "Cekurte Symfony2"
+    registration:
+        confirmation:
+            enabled:        true
+            template:       CekurteCustomUserBundle:Registration:confirmation-email.html.twig
+
+cekurte_user:
+    group:
+        default_name:       Default
+        repository:         CekurteCustomUserBundle:Group
+
+knp_paginator:
+    page_range:             5
+    # default page range used in pagination control
+    default_options:
+        page_name:          page
+        # page query parameter name
+        sort_field_name:    sort
+        # sort field query parameter name
+        sort_direction_name: direction
+        # sort direction query parameter name
+        distinct:           true
+        # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination:         KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig
+        # sliding pagination controls template
+        sortable:           KnpPaginatorBundle:Pagination:sortable_link.html.twig
+
+hwi_oauth:
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name:          main
+    target_path_parameter:  _target_path
+    fosub:
+        username_iterations: 30
+        properties:
+            facebook:       facebook_id
+            linkedin:       linkedin_id
+    connect:
+        account_connector:  oauth_custom_user_provider
+    resource_owners:
+        facebook:
+            type:               facebook
+            client_id:          %facebook_client_id%
+            client_secret:      %facebook_client_secret%
+            scope:              "email"
+            infos_url:          "https://graph.facebook.com/me?fields=name,email,picture.height(80).width(80)"
+            paths:
+                profilepicture: picture.data.url
+        linkedin:
+            type:               linkedin
+            client_id:          %linkedin_client_id%
+            client_secret:      %linkedin_client_secret%
+            scope:              r_emailaddress
+            infos_url:          "https://api.linkedin.com/v1/people/~:(id,formatted-name,email-address,picture-url)?format=json"
+
+# Captcha
+# ewz_recaptcha:
+#     public_key:                 6Lez1OwSAAAAAPgUtKAIvfh5TltTfp9LflLLYrY8
+#     private_key:                6Lez1OwSAAAAAA_2f34g_pot643VT9ZSKR63dqNq
+#     secure:                     false
+#     locale_key:                 kernel.default_locale
+
+liip_imagine:
+    resolvers:
+        default:
+            web_path:       ~
+    driver:                 gd
+    cache:                  default
+    data_loader:            default
+    controller_action:      liip_imagine.controller:filterAction
+    filter_sets:
+        admin_thumbnail_list:
+            quality:            40
+            filters:
+                thumbnail:
+                    size:       [48, 48]
+                    mode:       outbound
+
+oneup_uploader:
+    mappings:
+        profile:
+            frontend:               blueimp
+            max_size:               2097152     # 2 MB (1024 * 1024 * 2)
+            allowed_mimetypes:      ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+fos_js_routing:
+    routes_to_expose:
+        - cekurte_ajax_liipimagine_uploader

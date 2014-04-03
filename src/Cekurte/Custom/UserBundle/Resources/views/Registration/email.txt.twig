@@ -1,0 +1,16 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+{% autoescape false %}
+{{ 'registration.email.subject'|trans({'%username%': user.username}) }}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'Olá, %username%!
+
+Para completar a validação da sua conta, clique no link: %confirmationUrl%
+
+Cekurte Sistemas.'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}) }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}

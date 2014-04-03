@@ -1,0 +1,24 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony2
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            pt_BR
+    secret:            22be5ea1f4809e3eb8d57cc3b7602092
+
+    # number of items per page
+    paginator_number_results_per_page:  10
+
+    # OAuth config
+    facebook_client_id:     111
+    facebook_client_secret: 222
+    linkedin_client_id:     333
+    linkedin_client_secret: 444

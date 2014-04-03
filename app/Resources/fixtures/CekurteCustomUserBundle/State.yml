@@ -1,0 +1,109 @@
+Cekurte\Custom\UserBundle\Entity\State:
+    state1:
+        id: 1
+        acronym: "AC"
+        name: "Acre"
+    state2:
+        id: 2
+        acronym: "AL"
+        name: "Alagoas"
+    state3:
+        id: 3
+        acronym: "AM"
+        name: "Amazonas"
+    state4:
+        id: 4
+        acronym: "AP"
+        name: "Amapá"
+    state5:
+        id: 5
+        acronym: "BA"
+        name: "Bahia"
+    state6:
+        id: 6
+        acronym: "CE"
+        name: "Ceará"
+    state7:
+        id: 7
+        acronym: "DF"
+        name: "Distrito Federal"
+    state8:
+        id: 8
+        acronym: "ES"
+        name: "Espírito Santo"
+    state9:
+        id: 9
+        acronym: "GO"
+        name: "Goiás"
+    state10:
+        id: 10
+        acronym: "MA"
+        name: "Maranhão"
+    state11:
+        id: 11
+        acronym: "MG"
+        name: "Minas Gerais"
+    state12:
+        id: 12
+        acronym: "MS"
+        name: "Mato Grosso do Sul"
+    state13:
+        id: 13
+        acronym: "MT"
+        name: "Mato Grosso"
+    state14:
+        id: 14
+        acronym: "PA"
+        name: "Pará"
+    state15:
+        id: 15
+        acronym: "PB"
+        name: "Paraíba"
+    state16:
+        id: 16
+        acronym: "PE"
+        name: "Pernambuco"
+    state17:
+        id: 17
+        acronym: "PI"
+        name: "Piauí"
+    state18:
+        id: 18
+        acronym: "PR"
+        name: "Paraná"
+    state19:
+        id: 19
+        acronym: "RJ"
+        name: "Rio de Janeiro"
+    state20:
+        id: 20
+        acronym: "RN"
+        name: "Rio Grande do Norte"
+    state21:
+        id: 21
+        acronym: "RO"
+        name: "Rondônia"
+    state22:
+        id: 22
+        acronym: "RR"
+        name: "Roraima"
+    state23:
+        id: 23
+        acronym: "RS"
+        name: "Rio Grande do Sul"
+    state24:
+        id: 24
+        acronym: "SC"
+        name: "Santa Catarina"
+    state25:
+        id: 25
+        acronym: "SE"
+        name: "Sergipe"
+    state26:
+        id: 26
+        acronym: "SP"
+        name: "São Paulo"
+    state27:
+        id: 27
+        acronym: "TO"
+        name: "Tocantins"

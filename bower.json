@@ -1,0 +1,22 @@
+{
+  "name": "cekurte-symfony2",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.0",
+    "jquery-placeholder": "2.0.7",
+    "bootstrap": "3.1.1",
+    "html5shiv": "3.7.0",
+    "respond": "1.4.2",
+    "fancybox": "2.1.5",
+    "jquery.validation": "1.11.1",
+    "jQuery-Mask-Plugin": "1.5.4",
+    "blueimp-file-upload": "9.5.7"
+  }
+}

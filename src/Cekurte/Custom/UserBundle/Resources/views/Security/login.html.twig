@@ -1,0 +1,15 @@
+{%- if app.request.attributes.get('_route') == 'fos_user_security_login' -%}
+    {%- embed '@CekurteUserBundleVendor/Security/login.html.twig' -%}
+        {%- block form_open -%}
+            <a href="{{ hwi_oauth_login_url('facebook') }}" class="btn btn-lg btn-primary">Facebook</a>
+            <a href="{{ hwi_oauth_login_url('linkedin') }}" class="btn btn-lg btn-info">Linkedin</a>
+            <form method="post" action="{{ path("_admin_fos_user_security_check") }}" role="form" class="form-horizontal">
+        {%- endblock -%}
+    {%- endembed -%}
+{%- else -%}
+    {%- embed '@CekurteUserBundleVendor/Security/login.html.twig' -%}
+        {%- block form_open -%}
+            <form method="post" action="{{ path("_admin_fos_user_security_check") }}" role="form" class="form-horizontal">
+        {%- endblock -%}
+    {%- endembed -%}
+{%- endif -%}
