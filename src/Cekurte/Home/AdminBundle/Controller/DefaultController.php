@@ -2,16 +2,18 @@
 
 namespace Cekurte\Home\AdminBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Cekurte\GeneratorBundle\Controller\CekurteController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
- * @Route("/")
- * @Template()
+ * Default Controller
+ *
+ * @author  João Paulo Cercal <sistemas@cekurte.com>
+ * @version 1.0
  */
-class DefaultController extends Controller
+class DefaultController extends CekurteController
 {
     /**
      * @Route("/")

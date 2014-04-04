@@ -55,6 +55,9 @@ class AppKernel extends Kernel
             new Cekurte\Layout\SiteBundle\CekurteLayoutSiteBundle(),
             new Cekurte\Home\AdminBundle\CekurteHomeAdminBundle(),
             new Cekurte\Home\SiteBundle\CekurteHomeSiteBundle(),
+            new Cekurte\Pages\CoreBundle\CekurtePagesCoreBundle(),
+            new Cekurte\Pages\SiteBundle\CekurtePagesSiteBundle(),
+            new Cekurte\Pages\AdminBundle\CekurtePagesAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

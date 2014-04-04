@@ -1,3 +1,8 @@
+
+
+# ------------------------------------------------------------------------------
+# CekurteHomeBundle(s)
+
 cekurte_home_site:
     resource:   "@CekurteHomeSiteBundle/Controller/"
     type:       annotation
@@ -7,6 +12,19 @@ cekurte_home_admin:
     resource:   "@CekurteHomeAdminBundle/Controller/"
     type:       annotation
     prefix:     /admin/
+
+# ------------------------------------------------------------------------------
+# CekurtePagesBundle(s)
+
+cekurte_pages_site:
+    resource: "@CekurtePagesSiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+cekurte_pages_admin:
+    resource: "@CekurtePagesAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin/
 
 # ------------------------------------------------------------------------------
 # CekurteUploaderBundle

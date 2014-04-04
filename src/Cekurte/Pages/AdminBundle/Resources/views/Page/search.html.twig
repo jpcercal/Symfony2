@@ -1,0 +1,15 @@
+{% extends 'CekurteGeneratorBundle::modal.html.twig' %}
+
+{% block title -%}{{ 'Pesquisar' | trans }}{% endblock %}
+
+{% block form_open -%}
+    <form class="form-horizontal" role="form" action=" {{ path('page_search') }}" method="post">
+{% endblock %}
+
+{% block content -%}
+    {{ form_widget(search_form) }}
+{% endblock %}
+
+{% block action_close -%}
+    <a href=" {{ path('page_search') }}" class="btn btn-default">{{ 'Fechar' | trans }}</a>
+{% endblock %}

@@ -7,20 +7,8 @@
 <li class="{% if menu_active == 'home' %}active{% endif %}">
     <a href="{{ path("cekurte_home_admin_default_index") }}"><span class="glyphicon glyphicon-home"></span> {{ 'Home' | trans }}</a>
 </li>
-<li class="dropdown{% if menu_active == 'localizacao' %} active{% endif %}">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-map-marker"></span> {{ 'Localização' | trans }} <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-        <li>
-            <a href="{{ path("endereco") }}">{{ 'Endereço' | trans }}</a>
-        </li>
-        <li class="divider"></li>
-        <li>
-            <a href="{{ path("enderecocidade") }}">{{ 'Cidade' | trans }}</a>
-        </li>
-        <li>
-            <a href="{{ path("enderecoestado") }}">{{ 'Estado' | trans }}</a>
-        </li>
-    </ul>
+<li class="{% if menu_active == 'page' %}active{% endif %}">
+    <a href="{{ path("page") }}"><span class="glyphicon glyphicon-align-justify"></span> {{ 'Pages' | trans }}</a>
 </li>
 {%- endblock %}
 
@@ -30,7 +18,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <span>{{ app.user.username }}</span> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="{{ path("fos_user_profile_show") }}"><span class="glyphicon glyphicon-cog"></span> {{ 'Perfil' | trans }}</a>
+                    <a href="{{ path("_admin_fos_user_profile_show") }}"><span class="glyphicon glyphicon-cog"></span> {{ 'Perfil' | trans }}</a>
                 </li>
                 <li class="divider"></li>
                 <li>
@@ -43,14 +31,13 @@
 
 {%- block stylesheets -%}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css') }}" />
 {%- endblock -%}
 
 {% block javascripts %}
     {{ parent() }}
 
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ asset('ckeditor/adapters/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/cekurtecustomgenerator/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('bundles/cekurtecustomgenerator/ckeditor/adapters/jquery.js') }}"></script>
 
     <script type="text/javascript">
         $(document).on('ready', function() {

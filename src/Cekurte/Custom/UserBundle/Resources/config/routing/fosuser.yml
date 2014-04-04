@@ -35,3 +35,10 @@ _admin_fos_user_security_check:
 _admin_fos_user_security_logout:
     pattern:  /logout
     defaults: { _controller: FOSUserBundle:Security:logout }
+
+# ------------------------------------------------------------------------------
+# Profile
+
+_admin_fos_user_profile_show:
+    pattern:  /login
+    defaults: { _controller: FOSUserBundle:Profile:show }

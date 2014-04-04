@@ -152,6 +152,10 @@ liip_imagine:
     resolvers:
         default:
             web_path:       ~
+    loaders:
+        default:
+            filesystem:
+                data_root:  %kernel.root_dir%/../web
     driver:                 gd
     cache:                  default
     data_loader:            default
@@ -163,10 +167,20 @@ liip_imagine:
                 thumbnail:
                     size:       [48, 48]
                     mode:       outbound
+        page_thumbnail:
+            quality:            40
+            filters:
+                thumbnail:
+                    size:       [250, 250]
+                    mode:       outbound
 
 oneup_uploader:
     mappings:
         profile:
+            frontend:               blueimp
+            max_size:               2097152     # 2 MB (1024 * 1024 * 2)
+            allowed_mimetypes:      ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+        page:
             frontend:               blueimp
             max_size:               2097152     # 2 MB (1024 * 1024 * 2)
             allowed_mimetypes:      ["image/jpg", "image/jpeg", "image/png", "image/gif"]
