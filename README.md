@@ -7,6 +7,7 @@ O Projeto pode ser criado da seguinte forma:
 
 ```bash
 # composer create-project cekurte/symfony2 path/ 2.4.2.0
+# cd path/
 # bower install --allow-root
 # php app/console doctrine:database:create
 # php app/console doctrine:schema:update --force
