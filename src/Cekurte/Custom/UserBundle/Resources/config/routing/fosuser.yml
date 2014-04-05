@@ -40,5 +40,5 @@ _admin_fos_user_security_logout:
 # Profile
 
 _admin_fos_user_profile_show:
-    pattern:  /login
+    pattern:  /profile
     defaults: { _controller: FOSUserBundle:Profile:show }
