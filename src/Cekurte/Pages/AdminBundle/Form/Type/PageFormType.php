@@ -27,15 +27,16 @@ class PageFormType extends AbstractType
             $builder->add('title')->setRequired(false);
             $builder->add('abstract')->setRequired(false);
             $builder->add('description')->setRequired(false);
-            $builder->add('date')->setRequired(false);
-            $builder->add('active')->setRequired(false);
+            $builder->add('active', null, array(
+                'label' => 'Inativo'
+            ))->setRequired(false);
 
         } else {
 
             $builder
                 ->add('image', 'hidden', array(
                     'attr'  => array(
-                        'class' => 'blog_post_imagem' // Mesmo nome do endpoint
+                        'class' => 'page' // Mesmo nome do endpoint
                     )
                 ))
                 ->add('title')

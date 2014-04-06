@@ -42,3 +42,4 @@ cekurte_fixtures:
         - CekurteCustomUserBundle/City
         - CekurteCustomUserBundle/Group
         - CekurteCustomUserBundle/User
+        - CekurtePagesCoreBundle/Page

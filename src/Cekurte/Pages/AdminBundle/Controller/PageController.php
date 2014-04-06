@@ -67,7 +67,7 @@ class PageController extends CekurteController implements RepositoryInterface
 
         if ($this->get('session')->has('search_page')) {
 
-            $form->handleRequest($this->get('session')->get('search_page'));
+            $form->bind($this->get('session')->get('search_page'));
         }
 
         $query = $this->getEntityRepository()->getQuery($form->getData(), $sort, $direction);
@@ -131,7 +131,7 @@ class PageController extends CekurteController implements RepositoryInterface
 
         if ($this->get('session')->has('search_page')) {
 
-            $form->handleRequest($this->get('session')->get('search_page'));
+            $form->bind($this->get('session')->get('search_page'));
         }
 
         $query = $this->getEntityRepository()->getQuery($form->getData(), $sort, $direction);
@@ -312,6 +312,7 @@ class PageController extends CekurteController implements RepositoryInterface
 
         return array(
             'entity'      => $entity,
+            'page_image'  => $form->get('image')->getData(),
             'edit_form'   => $form->createView(),
             'delete_form' => $this->createDeleteForm()->createView(),
         );

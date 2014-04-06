@@ -41,7 +41,11 @@
                 </tr>
                 <tr>
                     <th>Image</th>
-                    <td>{{ entity.image }}</td>
+                    <td>
+                        {%- if entity.image != '' -%}
+                        <img class="img-thumbnail" src="{{ entity.image | imagine_filter('page_thumbnail') }}">
+                        {%- endif -%}
+                    </td>
                 </tr>
                 <tr>
                     <th>Title</th>
