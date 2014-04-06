@@ -9,8 +9,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
 	//config.extraPlugins = 'youtube';
 
-	config.removePlugins = 'forms,image,flash,table,smiley,specialchar';
-
+	config.removePlugins = 'forms,flash,smiley,specialchar';
+	config.filebrowserBrowseUrl =  'http://www.3minovacao.com.br/vendor/kfm/'
     config.entities         = false;
     config.entities_greek   = false;
 };
