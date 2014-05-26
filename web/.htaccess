@@ -18,18 +18,6 @@ DirectoryIndex app.php
     RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
     RewriteRule ^(.*) - [E=BASE:%1]
 
-    #Redirecionamento do blog
-    RewriteRule http://www.3minovacao.com.br/blog/(.*)+.\/ %{ENV:BASE}/blog [R=301,L,NE]
-    
-    #Redirecionamento de fabrica
-    RewriteRule ^(.*)/interativo/fabrica-de-ideias/(.*) %{ENV:BASE}/desafios [R=301,L,NE]
-
-    #Redirecionamento de Consultor
-   	RewriteRule ^(.*)/interativo/pergunte-ao-consultor/(.*) %{ENV:BASE}/duvidas [R=301,L,NE]
-
-    #Redirecionamento de Teste drive
-    RewriteRule ^(.*)/test_drive/(.*) %{ENV:BASE}/teste-drive [R=301,L,NE]
-    
     # Redirect to URI without front controller to prevent duplicate content
     # (with and without `/app.php`). Only do this redirect on the initial
     # rewrite by Apache and not on subsequent cycles. Otherwise we would get an
@@ -51,7 +39,6 @@ DirectoryIndex app.php
 
     # Rewrite all other queries to the front controller.
     RewriteRule .? %{ENV:BASE}/app.php [L]
-
 </IfModule>
 
 <IfModule !mod_rewrite.c>
@@ -63,16 +50,3 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
-
-#força o download
-AddType application/octet-stream .flv
-AddType application/octet-stream .swf
-AddType application/octet-stream .doc
-AddType application/octet-stream .docx
-AddType application/octet-stream .xls
-AddType application/octet-stream .xlsx
-AddType application/octet-stream .pdf
-AddType application/octet-stream .jpg
-AddType application/octet-stream .jpeg
-AddType application/octet-stream .png
-AddType application/octet-stream .gif
