@@ -52,12 +52,8 @@ class AppKernel extends Kernel
             // Bundles do Projeto "/src"
             new Cekurte\Custom\UserBundle\CekurteCustomUserBundle(),
             new Cekurte\Custom\GeneratorBundle\CekurteCustomGeneratorBundle(),
-            new Cekurte\Layout\SiteBundle\CekurteLayoutSiteBundle(),
-            new Cekurte\Home\AdminBundle\CekurteHomeAdminBundle(),
-            new Cekurte\Home\SiteBundle\CekurteHomeSiteBundle(),
-            new Cekurte\Pages\CoreBundle\CekurtePagesCoreBundle(),
-            new Cekurte\Pages\SiteBundle\CekurtePagesSiteBundle(),
-            new Cekurte\Pages\AdminBundle\CekurtePagesAdminBundle(),
+            new Cekurte\Admin\DashboardBundle\CekurteAdminDashboardBundle(),
+            new Cekurte\SiteBundle\CekurteSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

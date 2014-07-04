@@ -1,9 +1,0 @@
-Cekurte\Pages\CoreBundle\Entity\Page:
-    pageAbout:
-        title: "Sobre"
-        abstract: <text(200)>
-        description: <text(800)>
-    pageContact:
-        title: "Contato"
-        abstract: <text(200)>
-        description: <text(800)>

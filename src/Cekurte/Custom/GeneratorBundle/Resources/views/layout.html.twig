@@ -5,10 +5,7 @@
 
 {%- block menu %}
 <li class="{% if menu_active == 'home' %}active{% endif %}">
-    <a href="{{ path("cekurte_home_admin_default_index") }}"><span class="glyphicon glyphicon-home"></span> {{ 'Home' | trans }}</a>
-</li>
-<li class="{% if menu_active == 'page' %}active{% endif %}">
-    <a href="{{ path("page") }}"><span class="glyphicon glyphicon-align-justify"></span> {{ 'Pages' | trans }}</a>
+    <a href="{{ path("cekurte_admin_dashboard") }}"><span class="glyphicon glyphicon-home"></span> {{ 'Home' | trans }}</a>
 </li>
 {%- endblock %}
 
