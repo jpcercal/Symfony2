@@ -159,7 +159,9 @@ liip_imagine:
     driver:                 gd
     cache:                  default
     data_loader:            default
-    controller_action:      liip_imagine.controller:filterAction
+    controller:
+        filter_action:         liip_imagine.controller:filterAction
+        filter_runtime_action: liip_imagine.controller:filterRuntimeAction
     filter_sets:
         admin_thumbnail_list:
             quality:            40

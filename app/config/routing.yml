@@ -30,8 +30,7 @@ cekurte_pages_admin:
 # CekurteUploaderBundle
 
 _imagine:
-    resource:   .
-    type:       imagine
+    resource:   "@LiipImagineBundle/Resources/config/routing.xml"
 
 oneup_uploader:
     resource:   .
