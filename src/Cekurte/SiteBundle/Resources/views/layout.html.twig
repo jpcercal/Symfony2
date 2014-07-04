@@ -1,1 +1,69 @@
-{% extends '::base.html.twig' %}
+{% extends 'CekurteGeneratorBundle::layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/cekurtesite/css/style.css') }}" />
+{% endblock %}
+
+{% block body %}
+    {% block container_open %}<div class="container">{% endblock %}
+        {% block container %}
+            {% block header_open %}<div class="header">{% endblock %}
+                {% block header %}
+                    <ul class="nav nav-pills pull-right">
+                        <li class="active"><a href="#">{{ 'Home'|trans }}</a></li>
+                    </ul>
+                    <h3 class="text-muted">Cekurte Symfony2</h3>
+                {% endblock %}
+            {% block header_close %}</div>{% endblock %}
+
+            {% block content_open %}<div class="jumbotron">{% endblock %}
+                {% block content %}{% endblock %}
+            {% block content_close %}</div>{% endblock %}
+
+            {% block marketing_open %}<div class="row marketing">{% endblock %}
+                {% block marketing %}
+                    {% block marketing_container_left %}
+                        <div class="col-lg-6">
+                            <h4>CekurteMailerBundle <a href="https://github.com/CekurteSistemas/CekurteMailerBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Permite acesso a API do Mail2Easy fornecida pela Dinamize.</p>
+
+                            <h4>CekurteLivebuzzBundle <a href="https://github.com/CekurteSistemas/CekurteLivebuzzBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Realiza a integração com o serviço Livebuzz da empresa Dinamize.</p>
+
+                            <h4>CekurteFixturesBundle <a href="https://github.com/CekurteSistemas/CekurteFixturesBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Importação de DataFixtures através de arquivos YAML.</p>
+
+                            <h4>CekurteGeneratorBundle <a href="https://github.com/CekurteSistemas/CekurteGeneratorBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Geração de CRUD's, gerenciamento de templates e permissões de acesso.</p>
+
+                            <h4>CekurtePageBundle <a href="https://github.com/CekurteSistemas/CekurtePageBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Em desenvolvimento.</p>
+                        </div>
+                    {% endblock %}
+                    {% block marketing_container_right %}
+                        <div class="col-lg-6">
+                            <h4>CekurteUploaderBundle <a href="https://github.com/CekurteSistemas/CekurteUploaderBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Realiza o upload de arquivos, e também faz corte e cache de imagens.</p>
+
+                            <h4>CekurteUserBundle <a href="https://github.com/CekurteSistemas/CekurteUserBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Gerencia a autenticação na plataforma através do banco de dados e permite a integração com vários serviços (Facebook, Google, LinkedIn, Twitter, etc) através do protocolo OAuth.</p>
+
+                            <h4>CekurteGoogleApiBundle <a href="https://github.com/CekurteSistemas/CekurteGoogleApiBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Permite acesso aos serviços da Google através do protocolo OAuth, realizando a integração com o CekurteUserBundle para realização da autenticação.</p>
+
+                            <h4>CekurteComponentBundle <a href="https://github.com/CekurteSistemas/CekurteComponentBundle" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-share-alt" target="_blank"></span> Ver Repositório</a></h4>
+                            <p>Fornece componentes básicos para o funcionamento do CekurteGeneratorBundle e demais funcionalidades do Symfony2.</p>
+                        </div>
+                    {% endblock %}
+                {% endblock %}
+            {% block marketing_close %}</div>{% endblock %}
+
+            {% block footer_open %}<div class="footer">{% endblock %}
+                {% block footer %}<p>
+                    <a href="http://sistemas.cekurte.com/" target="_blank">Cekurte 2014</a>
+                </p>{% endblock %}
+            {% block footer_close %}</div>{% endblock %}
+        {% endblock %}
+    {% block container_close %}</div>{% endblock %}
+{% endblock %}

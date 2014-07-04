@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Oneup\UploaderBundle\OneupUploaderBundle(),
             new Cekurte\UploaderBundle\CekurteUploaderBundle(),
+            new Cekurte\PageBundle\CekurtePageBundle(),
 
             // -----------------------------------------------------------------
             // Bundles do Projeto "/src"
