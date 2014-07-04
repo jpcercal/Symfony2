@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class HomeController extends CekurteController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      * @Method("GET")
      * @Template()
      */
