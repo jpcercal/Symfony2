@@ -12,7 +12,12 @@ O Projeto pode ser criado da seguinte forma:
 # php app/console doctrine:database:create
 # php app/console doctrine:schema:update --force
 # php app/console doctrine:fixtures:load --no-interaction
+# php app/console assets:install --symlink web
 ```
+
+### Como solucionar o problema de permissão dos diretórios app/cache e app/logs:
+
+
 
 ## Notas:
 
@@ -20,10 +25,12 @@ O banco de "Estados" e "Cidades" está atualizado de acordo com o último levant
 
 As contas de acesso criadas automaticamente pelo carregamento de Data Fixtures são:
 
-**Usuário:** *admin*
+Usuário do Grupo Admin (ROLE_ADMIN):
 
-**Senha:** *123*
+- **Usuário:** *admin*
+- **Senha:** *123*
 
-**Usuário:** *default*
+Usuário do Grupo Default (ROLE_USER):
 
-**Senha:** *123*
+- **Usuário:** *default*
+- **Senha:** *123*
