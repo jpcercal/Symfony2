@@ -15,6 +15,14 @@ cekurte_admin_dashboard:
     prefix:     /admin/
 
 # ------------------------------------------------------------------------------
+# CekurteGeneratorBundle
+
+cekurte_generator:
+    resource:   "@CekurteGeneratorBundle/Controller/"
+    type:       annotation
+    prefix:     /
+
+# ------------------------------------------------------------------------------
 # CekurteUploaderBundle
 
 _imagine:
