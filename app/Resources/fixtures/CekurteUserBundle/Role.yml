@@ -1,0 +1,10 @@
+Cekurte\UserBundle\Entity\Role:
+    roleSuperAdmin:
+        id: ROLE_SUPER_ADMIN
+        description: "Role Super Admin"
+    roleAdmin:
+        id: ROLE_ADMIN
+        description: "Role Admin"
+    roleUser:
+        id: ROLE_USER
+        description: "Role User"

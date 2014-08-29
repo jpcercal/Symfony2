@@ -42,3 +42,10 @@ _admin_fos_user_security_logout:
 _admin_fos_user_profile_show:
     pattern:  /profile
     defaults: { _controller: FOSUserBundle:Profile:show }
+
+# ------------------------------------------------------------------------------
+# Group
+
+fos_user_group_list:
+    pattern:  /group/
+    defaults: { _controller: FOSUserBundle:Group:list }

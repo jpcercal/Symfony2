@@ -38,6 +38,7 @@ assetic:
 cekurte_fixtures:
     directory: "%kernel.root_dir%/Resources/fixtures"
     resources:
+        - CekurteUserBundle/Role
         - CekurteCustomUserBundle/State
         - CekurteCustomUserBundle/City
         - CekurteCustomUserBundle/Group
