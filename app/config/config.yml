@@ -90,7 +90,9 @@ fos_user:
     registration:
         confirmation:
             enabled:        true
-            template:       CekurteCustomUserBundle:Registration:confirmation-email.html.twig
+            template:       CekurteUserBundle:Registration:email.txt.twig
+        form:
+            type:           cekurte_user_registration
 
 cekurte_user:
     group:

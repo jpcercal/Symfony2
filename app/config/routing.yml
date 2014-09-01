@@ -22,6 +22,9 @@ cekurte_user:
     type:       annotation
     prefix:     /admin/
 
+cekurte_user_create:
+    resource:   "@CekurteUserBundle/Resources/config/routing/user.xml"
+
 # ------------------------------------------------------------------------------
 # CekurteGeneratorBundle
 
