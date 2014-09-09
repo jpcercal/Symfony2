@@ -22,9 +22,6 @@ cekurte_user:
     type:       annotation
     prefix:     /admin/
 
-cekurte_user_create:
-    resource:   "@CekurteUserBundle/Resources/config/routing/user.xml"
-
 # ------------------------------------------------------------------------------
 # CekurteGeneratorBundle
 
@@ -66,7 +63,7 @@ fos_user_security:
 
 fos_user_register:
     resource:   "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix:     /register
+    prefix:     /
 
 # ------------------------------------------------------------------------------
 # OAuth
