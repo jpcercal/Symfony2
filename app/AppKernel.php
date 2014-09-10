@@ -50,11 +50,18 @@ class AppKernel extends Kernel
             new Cekurte\PageBundle\CekurtePageBundle(),
 
             // -----------------------------------------------------------------
+            // REST
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new FOS\RestBundle\FOSRestBundle(),
+            new \Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+
+            // -----------------------------------------------------------------
             // Bundles do Projeto "/src"
             new Cekurte\Custom\UserBundle\CekurteCustomUserBundle(),
             new Cekurte\Custom\GeneratorBundle\CekurteCustomGeneratorBundle(),
             new Cekurte\Admin\DashboardBundle\CekurteAdminDashboardBundle(),
             new Cekurte\SiteBundle\CekurteSiteBundle(),
+            new Test\TestBundle\TestTestBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
