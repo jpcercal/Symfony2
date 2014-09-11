@@ -1,5 +1,5 @@
 test_test:
-    resource: "Test\TestBundle\Controller\DefaultController"
+    resource: Test\TestBundle\Controller\PageController
     type:     rest
     prefix:   /
 

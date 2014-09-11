@@ -4,17 +4,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="test_test.example.class">Test\TestBundle\Example</parameter>
+        <parameter key="test_test.page.handler.class">Test\TestBundle\Service\PageHandler</parameter>
+        <parameter key="test_test.page.class">Test\TestBundle\Entity\Page</parameter>
     </parameters>
 
     <services>
-        <service id="test_test.example" class="%test_test.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="test_test.page.handler" class="%test_test.page.handler.class%">
+            <argument>%test_test.page.class%</argument>
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
         </service>
     </services>
-    -->
+
 </container>
