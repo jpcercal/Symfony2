@@ -9,9 +9,8 @@ use JMS\Serializer\Annotation as Serializer;
  * Page
  *
  * @ORM\Table(name="test_page")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="\Test\TestBundle\Entity\Repository\PageRepository")
  * @Serializer\ExclusionPolicy("all")
- * @Serializer\XmlRoot("option")
  */
 class Page
 {

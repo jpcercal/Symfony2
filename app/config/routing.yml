@@ -1,7 +1,7 @@
 test_test:
     resource: Test\TestBundle\Controller\PageController
     type:     rest
-    prefix:   /
+    prefix:   /api
 
 # ------------------------------------------------------------------------------
 # CekurteSiteBundle

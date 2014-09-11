@@ -3,6 +3,7 @@
 namespace Test\TestBundle\Service;
 
 use Cekurte\ComponentBundle\Util\DoctrineContainerAware;
+use Cekurte\GeneratorBundle\Service\Manager;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
@@ -13,27 +14,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * @author João Paulo Cercal <sistemas@cekurte.com>
  * @version 1.0
  */
-class PageHandler extends DoctrineContainerAware implements HandlerInterface
+class PageHandler extends Manager
 {
     /**
      * @inheritdoc
      */
-    public function get($id)
+    protected function getResourceClass()
     {
-        $entity = $this->getRepository('TestTestBundle:Page')->find($id);
-
-        if (!$entity) {
-            throw new NotFoundHttpException(sprintf('The resource \'%s\' was not found.', $id));
-        }
-
-        return $entity;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function all($limit = 10, $offset = 0)
-    {
-        return $this->getRepository('TestTestBundle:Page')->findAll();
+        return 'TestTestBundle:Page';
     }
 }

@@ -2,15 +2,18 @@
 
 namespace Test\TestBundle\Controller;
 
+use FOS\RestBundle\Request\ParamFetcherInterface;
+use JMS\SecurityExtraBundle\Annotation\Secure;
+use Knp\Bundle\PaginatorBundle\Pagination\SlidingPagination;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Test\TestBundle\Entity\Page;
 
 /**
  * Class PageController
- *
- * @Rest\Prefix("/api")
- * @Rest\NamePrefix("testbundle_page")
- *
  *
  *
  * @package Test\TestBundle\Controller
@@ -20,20 +23,28 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 class PageController extends Controller
 {
     /**
-     * @Rest\Get(path="/pages", name="index")
+     * @Rest\Get("/pages", defaults={"page"=1, "sort"="ck.id", "direction"="asc"})
+     * @Rest\Get("/pages/page/{page}/sort/{sort}/direction/{direction}/", defaults={"page"=1, "sort"="ck.id", "direction"="asc"}, name="_paginator")
      * @Rest\View()
      *
+     * @param \Symfony\Component\HttpFoundation\Request $request
      * @return array
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $entities = $this->get('test_test.page.handler')->all();
+        $resources = $this->get('test_test.page.handler')->getResources($request);
 
-        return array('entities' => $entities);
+        if ($resources instanceof SlidingPagination) {
+            $resources->setUsedRoute('index_paginator');
+        }
+
+        return array(
+            'pagination' => $resources
+        );
     }
 
     /**
-     * @Rest\Get(path="/page/{id}", name="show")
+     * @Rest\Get(path="/page/{id}")
      * @Rest\View()
      *
      * @param int $id
@@ -41,8 +52,8 @@ class PageController extends Controller
      */
     public function showAction($id)
     {
-        $entity = $this->get('test_test.page.handler')->get($id);
-
-        return array('entity' => $entity);
+        return array(
+            'resource' => $this->get('test_test.page.handler')->getResource($id)
+        );
     }
 }
