@@ -12,23 +12,25 @@
 {% endblock %}
 
 {% block links_footer -%}
-    {{ knp_pagination_render(pagination) }}
+    {{ cekurte_pagination_render(pagination) }}
 {% endblock %}
 
 {% block content -%}
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
-            <tr>
-                <th{% if pagination.isSorted('ck.id') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Name'|trans, 'ck.id', {'title' : 'Order by'|trans ~ ' ' ~ 'Name'|trans}) }}</th>
-            </tr>
+                <tr>
+                    {{ cekurte_pagination_sortable('ck.id', 'ID') }}
+                    {{ cekurte_pagination_sortable('ck.title', 'Title') }}
+                </tr>
             </thead>
             <tbody>
-            {% for entity in pagination %}
-                <tr>
-                    <td>{{ entity.id }}</td>
-                </tr>
-            {% endfor %}
+                {% for item in pagination.items %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.title }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

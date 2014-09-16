@@ -34,7 +34,7 @@ class AppKernel extends Kernel
 
             // -----------------------------------------------------------------
             // Paginação
-            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+//            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 
             // -----------------------------------------------------------------
             // CekurteGeneratorBundle - Customização do SensioGeneratorBundle

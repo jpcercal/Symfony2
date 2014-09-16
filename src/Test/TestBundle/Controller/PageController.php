@@ -23,8 +23,7 @@ use Test\TestBundle\Entity\Page;
 class PageController extends Controller
 {
     /**
-     * @Rest\Get("/pages", defaults={"page"=1, "sort"="ck.id", "direction"="asc"})
-     * @Rest\Get("/pages/page/{page}/sort/{sort}/direction/{direction}/", defaults={"page"=1, "sort"="ck.id", "direction"="asc"}, name="_paginator")
+     * @Rest\Get("/pages")
      * @Rest\View()
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
@@ -33,10 +32,6 @@ class PageController extends Controller
     public function indexAction(Request $request)
     {
         $resources = $this->get('test_test.page.handler')->getResources($request);
-
-        if ($resources instanceof SlidingPagination) {
-            $resources->setUsedRoute('index_paginator');
-        }
 
         return array(
             'pagination' => $resources

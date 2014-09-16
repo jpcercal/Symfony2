@@ -35,6 +35,7 @@
         "friendsofsymfony/rest-bundle": "~1.4",
         "jms/serializer-bundle": "~0.13",
         "nelmio/api-doc-bundle": "~2.7",
+        "white-october/pagerfanta-bundle": "1.0.2",
 
         "cekurte/componentbundle": "1.0.*@dev",
         "cekurte/mailerbundle": "1.0.*@dev",
